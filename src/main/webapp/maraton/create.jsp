@@ -96,7 +96,8 @@
                         <div class="form-group">
                             <label for="lenguaje" class="col-sm-2 control-label">Lenguaje</label>
                             <div class="col-sm-10">
-                                <s:select name="maraton.lenguaje" list="# {'Java':'Java','C++':'C++','C':'C','Python':'Python'}" cssClass="form-control"/>
+                                <s:select name="maraton.lenguaje.lenguajeId" list="lenguajes"
+                                          headerKey="-1" headerValue="Selecciona un lenguaje de programación" listKey="lenguajeId" listValue="nombre" cssClass="form-control"/>
                             </div>
                         </div>
                         <div class="form-group">

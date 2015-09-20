@@ -5,7 +5,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Listado de maratones.</title>
+        <title>Maratones por lenguaje.</title>
         <link rel="stylesheet" type="text/css"
               href="/Maraton/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css"
@@ -45,7 +45,7 @@
                 <h1>Maratones</h1>
                 <p></p>
                 <p></p>
-                <p>Maratones existentes en el sistema:</p>
+                <p>Maratones en el lenguaje seleccionado:</p>
             </div>
             <div class="container-fluid">
                 <table class="table table-striped">

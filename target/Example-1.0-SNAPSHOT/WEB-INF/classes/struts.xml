@@ -53,6 +53,11 @@
             <result name="success">/maraton/listi.jsp</result>
             <result name="empty">/maraton/listiempty.jsp</result>
         </action>
+        
+        <action name="listByLenguaje" class="web.MaratonAction" method="listByLenguaje">
+            <result name="success">/maraton/maratonesByLenguaje.jsp</result>
+            <result name="empty">/maraton/maratonesByLenguajeEmpty.jsp</result>
+        </action>
     </package>
 		
     <package name="inscrito" namespace="/inscrito" extends="struts-default">

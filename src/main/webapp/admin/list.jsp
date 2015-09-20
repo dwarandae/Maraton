@@ -66,7 +66,7 @@
                             <td><s:date name="#maraton.fechaInicio" format="EEEE dd' de ' MMMM' de 'yyyy"/></td>
                             <td><s:date name="#maraton.fechaFin" format="EEEE dd' de ' MMMM' de 'yyyy"/></td>
                             <td><s:date name="#maraton.fecha" format="EEEE dd' de ' MMMM' de 'yyyy"/></td>
-                            <td><s:property value="#maraton.lenguaje" /></td>
+                            <td><s:property value="#maraton.lenguaje.nombre" /></td>
                             <td><s:property value="#maraton.estado"/></td>
                             <td><s:url id="editar" namespace='/maraton' action='edit'><s:param name="maraton.id" value="%{#maraton.id}"></s:param></s:url>
                                 <s:a href="%{editar}"><button type="button" class="btn btn-primary">Editar</button></s:a>
