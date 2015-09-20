@@ -99,11 +99,11 @@
     <package name="lenguaje" namespace="/lenguaje" extends="struts-default">
        <default-interceptor-ref name="validationWorkflowStack"/>
 
-        <action name="create" class="web.InscritoAction" method="create">
-            <result>/lenguaje/create.jsp</result>
+        <action name="create" class="web.LenguajeAction" method="create">
+            <result name="success">/lenguaje/create.jsp</result>
         </action>
         
-        <action name="createLenguaje" class="web.InscritoAction" method="createLenguaje">
+        <action name="createLenguaje" class="web.LenguajeAction" method="createLenguaje">
             <result name="success">/lenguaje/success.jsp</result>
             <result name="error">/lenguaje/error.jsp</result>
         </action>
