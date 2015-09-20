@@ -1,0 +1,11 @@
+web/InscritoAction.class
+dao/IInscritoDao.class
+dao/imp/InscritoDao.class
+web/MaratonAction.class
+web/LoginAction.class
+domain/Inscrito.class
+dao/IMyGenericDao.class
+dao/IMaratonDao.class
+dao/imp/MyGenericDao.class
+dao/imp/MaratonDao.class
+domain/Maraton.class

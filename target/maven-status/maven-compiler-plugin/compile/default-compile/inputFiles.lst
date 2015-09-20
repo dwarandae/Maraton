@@ -1,0 +1,11 @@
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/IMaratonDao.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/imp/MaratonDao.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/web/InscritoAction.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/IInscritoDao.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/imp/MyGenericDao.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/domain/Inscrito.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/web/MaratonAction.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/domain/Maraton.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/web/LoginAction.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/IMyGenericDao.java
+/home/dwarandae/NetBeansProjects/Maraton/src/main/java/dao/imp/InscritoDao.java

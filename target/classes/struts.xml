@@ -1,0 +1,122 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+
+    <constant name="struts.devMode" value="true"/>
+		
+    <package name="index" namespace="/" extends="struts-default">
+        <default-interceptor-ref name="validationWorkflowStack"/>
+				
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+				
+    </package>
+		
+    <package name="maraton" namespace="/maraton" extends="struts-default">
+		
+        <default-interceptor-ref name="validationWorkflowStack"/>
+				
+        <action name="index" class="web.MaratonAction">
+            <result>/maraton/index.jsp</result>
+        </action>	
+				
+        <action name="list" class="web.MaratonAction" method="listAvailable">
+            <result name="success">/maraton/list.jsp</result>
+            <result name="empty">/maraton/empty.jsp</result>
+        </action>		
+				
+        <action name="create" class="web.MaratonAction" method="create">
+            <result name="success">/maraton/create.jsp</result>
+        </action>
+				
+        <action name="createMaraton" class="web.MaratonAction" method="createMaraton">
+            <result name="success">/maraton/success.jsp</result>
+            <result name="input">/maraton/create.jsp</result>
+            <result name="error">/maraton/error.jsp</result>
+        </action>
+				
+        <action name="delete" class="web.MaratonAction" method="delete">
+            <result name="success">/maraton/delete.jsp</result>
+        </action>		
+				
+        <action name="edit" class="web.MaratonAction" method="edit">
+            <result name="success">/maraton/edit.jsp</result>
+        </action>		
+				
+        <action name="updateMaraton" class="web.MaratonAction" method="updateMaraton">
+            <result name="success">/maraton/successu.jsp</result>
+            <result name="error">/maraton/error.jsp</result>
+        </action>	
+				
+        <action name="inscritos" class="web.MaratonAction" method="inscritos">
+            <result name="success">/maraton/listi.jsp</result>
+            <result name="empty">/maraton/listiempty.jsp</result>
+        </action>
+    </package>
+		
+    <package name="inscrito" namespace="/inscrito" extends="struts-default">
+        <default-interceptor-ref name="validationWorkflowStack"/>
+				
+        <action name="index" class="web.InscritoAction">
+            <result>/inscrito/index.jsp</result>
+        </action>
+				
+        <action name="list" class="web.InscritoAction" method="list">
+            <result name="success">/inscrito/list.jsp</result>
+            <result name="empty">/inscrito/empty.jsp</result>
+        </action>
+				
+        <action name="create" class="web.InscritoAction" method="create">
+            <result name="success">/inscrito/create.jsp</result>
+            <result name="empty">/inscrito/error.jsp</result>
+        </action>
+				
+        <action name="createInscrito" class="web.InscritoAction" method="createInscrito">
+            <result name="success">/inscrito/success.jsp</result>
+            <result name="error">/inscrito/doble.jsp</result>
+        </action>
+				
+        <action name="delete" class="web.InscritoAction" method="delete">
+            <result name="success">/inscrito/delete.jsp</result>
+            <result name="input">/comun/errorF.jsp</result>
+        </action>		
+				
+        <action name="edit" class="web.InscritoAction" method="edit">
+            <result name="success">/inscrito/edit.jsp</result>
+        </action>
+				
+        <action name="updateInscrito" class="web.InscritoAction" method="updateInscrito">
+            <result name="success">/inscrito/successu.jsp</result>
+            <result name="input">/admin/index.jsp</result>
+        </action>
+				
+        <action name="editByMaraton" class="web.InscritoAction" method="edit">
+            <result name="success">/inscrito/editWithMaraton.jsp</result>
+        </action>
+    </package>
+		
+    <package name="admin" namespace="/admin" extends="struts-default">
+        <default-interceptor-ref name="validationWorkflowStack"/>
+				
+        <action name="login">
+            <result>/admin/login.jsp</result>
+        </action>
+				
+        <action name="index">
+            <result>/admin/index.jsp</result>
+        </action>
+				
+        <action name="authenticateUser" class="web.LoginAction" method="login">
+            <result name="success">/admin/index.jsp</result>
+            <result name="error">/admin/error.jsp</result>
+        </action>
+				
+        <action name="listMaraton" class="web.MaratonAction" method="list">
+            <result name="success">/admin/list.jsp</result>
+            <result name="empty">/admin/empty.jsp</result>
+        </action>
+				
+    </package>
+		
+</struts>
