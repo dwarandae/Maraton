@@ -5,28 +5,33 @@ import dao.ILenguajeDao;
 import domain.Lenguaje;
 
 public class LenguajeAction extends ActionSupport {
-    
+
     private ILenguajeDao lenguajeDao;
-    
+
     private Lenguaje lenguaje;
-   
+
     public String create() {
         return SUCCESS;
     }
-    
+
     public String createLenguaje() {
-        if(validate(lenguaje)){
+        if (validate(lenguaje)) {
             lenguajeDao.save(lenguaje);
             return SUCCESS;
-        }
-        else
+        } else {
             return ERROR;
+        }
     }
-    
+
     private boolean validate(Lenguaje lenguaje) {
-        if(lenguaje.getNombre() == null || lenguaje.getVersion() == null )
+        if (isNullOrEmpty(lenguaje.getNombre()) || isNullOrEmpty(lenguaje.getVersion())) {
             return false;
+        }
         return true;
+    }
+
+    private boolean isNullOrEmpty(String text) {
+        return text == null || text.isEmpty();
     }
 
     public ILenguajeDao getLenguajeDao() {
@@ -44,5 +49,5 @@ public class LenguajeAction extends ActionSupport {
     public void setLenguaje(Lenguaje lenguaje) {
         this.lenguaje = lenguaje;
     }
-    
+
 }
