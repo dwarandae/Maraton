@@ -3,12 +3,17 @@ package web;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.ILenguajeDao;
 import domain.Lenguaje;
+import java.util.List;
 
 public class LenguajeAction extends ActionSupport {
 
     private ILenguajeDao lenguajeDao;
 
     private Lenguaje lenguaje;
+    
+    private List<Lenguaje> lenguajes;
+    
+    private final String EMPTY = "EMPTY";
 
     public String create() {
         return SUCCESS;
@@ -29,6 +34,18 @@ public class LenguajeAction extends ActionSupport {
         }
         return true;
     }
+    
+    public String listAll() {
+        lenguajes = getAll();
+        if(lenguajes.isEmpty())
+            return EMPTY;
+        else
+            return SUCCESS;
+    }
+    
+    private List<Lenguaje> getAll() {
+        return lenguajeDao.findAllLenguajes();
+    }
 
     private boolean isNullOrEmpty(String text) {
         return text == null || text.isEmpty();
@@ -48,6 +65,14 @@ public class LenguajeAction extends ActionSupport {
 
     public void setLenguaje(Lenguaje lenguaje) {
         this.lenguaje = lenguaje;
+    }
+
+    public List<Lenguaje> getLenguajes() {
+        return lenguajes;
+    }
+
+    public void setLenguajes(List<Lenguaje> lenguajes) {
+        this.lenguajes = lenguajes;
     }
 
 }
