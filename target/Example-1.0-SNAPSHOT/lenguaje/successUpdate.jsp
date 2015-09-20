@@ -20,7 +20,7 @@
                         <span class="sr-only">Navegación</span> <span class="icon-bar"></span>
                         <span class="icon-bar"></span> <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Maratones de programación.</a>
+                    <a class="navbar-brand" href="#">Actualizar lenguaje</a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="nav navbar-nav">
@@ -28,12 +28,12 @@
                         <li><a
                                 href="<s:url namespace='/lenguaje' action='create'/>">Crear
                                 lenguaje</a></li>
-                        <li class="active"><a
+                        <li><a
                                 href="<s:url namespace='/lenguaje' action='list'/>">Administrar lenguajes</a></li>
                         <li><a
                                 href="<s:url namespace='/maraton' action='create'/>">Crear
                                 maratón</a></li>
-                        <li><a
+                        <li class="active"><a
                                 href="<s:url namespace='/admin' action='listMaraton'/>">Administrar maratones</a></li>
                         <li><a
                                 href="<s:url namespace='/inscrito' action='list'/>">Administrar inscritos</a></li>
@@ -45,7 +45,7 @@
             <p class="lead">
                 <br>
                 <br>
-            <div class="alert alert-danger" role="alert">No hay ningún lenguaje de programación creado. <a href="<s:url namespace='/lenguaje' action='create'/>" class="alert-link">Crear un nuevo lenguaje</a>
+            <div class="alert alert-success" role="alert">¡El lenguaje ha sido actualizado!. <a href="<s:url namespace='/admin' action='index'/>" class="alert-link">Volver al inicio</a>
             </div>
         </p>
     </div>

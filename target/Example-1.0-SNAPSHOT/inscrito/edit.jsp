@@ -8,7 +8,7 @@
               href="/Maraton/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css"
               href="/Maraton/bootstrap/css/bootstrap-theme.min.css">
-        <title>Inscripción a maratón</title>
+        <title>Editar inscripción</title>
     </head>
     <body>
         <nav id="myNavbar"

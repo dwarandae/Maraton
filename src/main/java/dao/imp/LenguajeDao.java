@@ -12,7 +12,8 @@ public class LenguajeDao extends MyGenericDao<Lenguaje> implements ILenguajeDao 
     @Transactional
     public Lenguaje getById(Long id) {
 
-        Query query = getSession().getNamedQuery("getInscritoById").setLong("lenguajeId", id);
+        System.out.println("en getById");
+        Query query = getSession().getNamedQuery("getLenguajeById").setLong("lenguajeId", id);
         Lenguaje lenguaje = (Lenguaje) query.uniqueResult();
         return lenguaje;
 
@@ -20,7 +21,6 @@ public class LenguajeDao extends MyGenericDao<Lenguaje> implements ILenguajeDao 
 
     @Override
     @Transactional
-    @SuppressWarnings("unchecked")
     public List<Lenguaje> findAllLenguajes() {
 
         Query query = getSession().getNamedQuery("findLenguajes");

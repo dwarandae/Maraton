@@ -108,13 +108,26 @@
             <result name="error">/lenguaje/error.jsp</result>
         </action>
         
-        <action name="list" class="web.LenguajeAction" method="listAll">
+        <action name="list" class="web.LenguajeAction" method="list">
             <result name="success">/lenguaje/list.jsp</result>
             <result name="empty">/lenguaje/empty.jsp</result>
         </action>
+        
+        <action name="edit" class="web.LenguajeAction" method="edit">
+            <result name="success">/lenguaje/edit.jsp</result>
+        </action>
+        
+        <action name="updateLenguaje" class="web.LenguajeAction" method="update">
+            <result name="success">/lenguaje/successUpdate.jsp</result>
+        </action>
+        
+        <action name="delete" class="web.LenguajeAction" method="delete">
+            <result name="success">/lenguaje/delete.jsp</result>
+            <result name="error">/lenguaje/errorDelete.jsp</result>
+        </action>
+        
     </package>
     
-		
     <package name="admin" namespace="/admin" extends="struts-default">
         <default-interceptor-ref name="validationWorkflowStack"/>
 				

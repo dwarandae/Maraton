@@ -2,18 +2,22 @@ package web;
 
 import com.opensymphony.xwork2.ActionSupport;
 import dao.ILenguajeDao;
+import dao.IMaratonDao;
 import domain.Lenguaje;
+import domain.Maraton;
 import java.util.List;
 
 public class LenguajeAction extends ActionSupport {
 
     private ILenguajeDao lenguajeDao;
 
+    private IMaratonDao maratonDao;
+
     private Lenguaje lenguaje;
-    
+
     private List<Lenguaje> lenguajes;
-    
-    private final String EMPTY = "EMPTY";
+
+    private final String EMPTY = "empty";
 
     public String create() {
         return SUCCESS;
@@ -34,15 +38,46 @@ public class LenguajeAction extends ActionSupport {
         }
         return true;
     }
-    
-    public String listAll() {
+
+    public String list() {
         lenguajes = getAll();
-        if(lenguajes.isEmpty())
+        if (lenguajes.isEmpty()) {
             return EMPTY;
-        else
+        } else {
             return SUCCESS;
+        }
     }
-    
+
+    public String edit() {
+        System.out.println(lenguaje.getLenguajeId());
+        lenguaje = lenguajeDao.getById(lenguaje.getLenguajeId());
+        return SUCCESS;
+    }
+
+    public String update() {
+        lenguajeDao.save(lenguaje);
+        return SUCCESS;
+    }
+
+    public String delete() {
+        if (validateDelete()) {
+            lenguajeDao.delete(lenguaje);
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
+    }
+
+    public boolean validateDelete() {
+        List<Maraton> maratones = maratonDao.findByLenguaje(lenguaje.getLenguajeId());
+        for (Maraton maraton : maratones) {
+            System.out.println(maraton);
+        }
+        System.out.println(maratones.size());
+        System.out.println(maratones.isEmpty());
+        return maratones.isEmpty();
+    }
+
     private List<Lenguaje> getAll() {
         return lenguajeDao.findAllLenguajes();
     }
@@ -73,6 +108,14 @@ public class LenguajeAction extends ActionSupport {
 
     public void setLenguajes(List<Lenguaje> lenguajes) {
         this.lenguajes = lenguajes;
+    }
+
+    public IMaratonDao getMaratonDao() {
+        return maratonDao;
+    }
+
+    public void setMaratonDao(IMaratonDao maratonDao) {
+        this.maratonDao = maratonDao;
     }
 
 }

@@ -9,7 +9,7 @@ import javax.persistence.*;
 @NamedQueries({
 		@NamedQuery(name = "getMaratonById", query = "FROM Maraton WHERE id = :id"),
 		@NamedQuery(name = "findMaratones", query = "FROM Maraton"),
-                @NamedQuery(name = "findMaratonesByLenguaje", query = "FROM Maraton WHERE lenguaje.id = :lenguajeId")})
+                @NamedQuery(name = "findMaratonesByLenguaje", query = "FROM Maraton WHERE lenguaje.lenguajeId = :lenguajeId")})
 public class Maraton implements Serializable{
 
 	@Id
