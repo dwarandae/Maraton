@@ -8,5 +8,7 @@ public interface IMaratonDao extends IMyGenericDao<Maraton>{
 	public Maraton getById(Long id);
 	
 	public List<Maraton> findByTodos();
+        
+        public List<Maraton> findByLenguaje(Long id);
 
 }

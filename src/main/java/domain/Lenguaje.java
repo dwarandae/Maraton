@@ -15,8 +15,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "lenguaje")
 @NamedQueries({
-    @NamedQuery(name = "getLenguajeById", query = "FROM Lenguaje WHERE lenguajeId = :id"),
-    @NamedQuery(name = "findLenguajes", query = "FROM Lenguaje")})
+    @NamedQuery(name = "getLenguajeById", query = "FROM Lenguaje l WHERE l.lenguajeId = :lenguajeId"),
+    @NamedQuery(name = "findLenguajes", query = "FROM Lenguaje l")})
 public class Lenguaje implements Serializable {
 
     @Id

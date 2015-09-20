@@ -21,12 +21,20 @@ public class MaratonDao extends MyGenericDao<Maraton> implements IMaratonDao{
 
 	@Override
 	@Transactional
-	@SuppressWarnings("unchecked")
 	public List<Maraton> findByTodos() {
 		
 		Query query = getSession().getNamedQuery("findMaratones");
 		return query.list();
 		
 	}
-
+        
+        @Override
+	@Transactional
+	public List<Maraton> findByLenguaje(Long id) {
+		
+		Query query = getSession().getNamedQuery("findMaratonesByLenguaje").setLong("lenguajeId", id);
+		return query.list();
+		
+	}
+        
 }
