@@ -107,6 +107,11 @@
             <result name="success">/lenguaje/success.jsp</result>
             <result name="error">/lenguaje/error.jsp</result>
         </action>
+        
+        <action name="list" class="web.LenguajeAction" method="listAll">
+            <result name="success">/lenguaje/list.jsp</result>
+            <result name="empty">/lenguaje/empty.jsp</result>
+        </action>
     </package>
     
 		
