@@ -1,0 +1,6 @@
+Nuevo requisito.
+
+Si cacharreó bien con el proyecto se habrá dado cuenta de las limitantes que tiene. Realmente el proyecto no está completo pero muestra muy bien lo necesario para comenzar a trabajar. Elegí una nueva tarea para implementar de cara a las necesidades y para que ustedes vean cómo es un flujo de trabajo en estos tres frameworks.
+
+Caso particular: cuando se crea una maratón, el administrador elige de un select un listado de lenguajes de programación y selecciona sólo 1 para crear la maratón. Se requiere que el administrador también pueda crear lenguajes de programación detallando el lenguaje y el nombre/número de la versión del compilador/intérprete que será usado en la maratón que se corra con ese lenguaje. Esto implica que si no se ha creado al menos un lenguaje de programación no se pueden crear maratones. Como restricción, también se pueden editar la información de los lenguajes de programación, pero NO se podrá eliminar un lenguaje si ya existen maratones que se hayan creado para ese lenguaje.
+
