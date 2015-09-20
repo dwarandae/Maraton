@@ -1,5 +1,6 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.*;
 
@@ -7,9 +8,9 @@ import javax.persistence.*;
 @Table(name = "inscrito")
 @NamedQueries({
 		@NamedQuery(name = "getInscritoById", query = "FROM Inscrito i WHERE i.id = :id"),
-		@NamedQuery(name = "findInscritos", query = "FROM Inscrito i") })
-		@NamedQuery(name = "getInscritoByMaraton", query = "FROM Inscrito i WHERE i.documento = :documento AND i.maraton.id = :maratonId")
-public class Inscrito {
+		@NamedQuery(name = "findInscritos", query = "FROM Inscrito i"),
+		@NamedQuery(name = "getInscritoByMaraton", query = "FROM Inscrito i WHERE i.documento = :documento AND i.maraton.id = :maratonId")})
+public class Inscrito implements Serializable {
 
 	@Id
 	@Column(name = "ins_id", nullable = false, unique = true)

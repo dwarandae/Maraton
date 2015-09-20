@@ -1,14 +1,16 @@
 package domain;
 
+import java.io.Serializable;
 import java.util.*;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "maraton")
 @NamedQueries({
-		@NamedQuery(name = "getMaratonById", query = "FROM Maraton m WHERE m.id = :id"),
-		@NamedQuery(name = "findMaratones", query = "FROM Maraton m") })
-public class Maraton {
+		@NamedQuery(name = "getMaratonById", query = "FROM Maraton WHERE id = :id"),
+		@NamedQuery(name = "findMaratones", query = "FROM Maraton"),
+                @NamedQuery(name = "findMaratonesByLenguaje", query = "FROM Maraton WHERE lenguaje.id = :lenguajeId")})
+public class Maraton implements Serializable{
 
 	@Id
 	@Column(name = "mar_id", nullable = false, unique = true)
@@ -28,12 +30,13 @@ public class Maraton {
 	@Column(name = "mar_fecha", nullable = false)
 	private Date fecha;
 
-	@Column(name = "mar_lenguaje", nullable = false)
-	private String lenguaje;
-
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "maraton")
 	private List<Inscrito> inscritos = new ArrayList<Inscrito>();
-
+        
+        @ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "mar_lenguaje")
+        private Lenguaje lenguaje;
+        
 	@Transient
 	private String estado;
 
@@ -41,7 +44,7 @@ public class Maraton {
 	}
 
 	public Maraton(String nombre, Date fechaInicio, Date fechaFin,
-			String lenguaje, Date fecha, List<Inscrito> inscritos) {
+			Lenguaje lenguaje, Date fecha, List<Inscrito> inscritos) {
 
 		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
@@ -84,11 +87,11 @@ public class Maraton {
 		this.fechaFin = fechaFin;
 	}
 
-	public String getLenguaje() {
+	public Lenguaje getLenguaje() {
 		return lenguaje;
 	}
 
-	public void setLenguaje(String lenguaje) {
+	public void setLenguaje(Lenguaje lenguaje) {
 		this.lenguaje = lenguaje;
 	}
 
