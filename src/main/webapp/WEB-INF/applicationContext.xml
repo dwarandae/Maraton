@@ -42,4 +42,6 @@
 
 <bean id="inscritoDao" class="dao.imp.InscritoDao" autowire="byName" scope="prototype" parent="myGenericDao" />
 
+<bean id="lenguajeDao" class="dao.imp.LenguajeDao" autowire="byName" scope="prototype" parent="myGenericDao" />
+
 </beans>

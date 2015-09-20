@@ -12,7 +12,7 @@ public class InscritoDao extends MyGenericDao<Inscrito> implements IInscritoDao{
 	@Transactional
 	public Inscrito getById(Long id) {
 		
-		Query query = getSession().getNamedQuery("getLenguajeById").setLong("lenguajeId", id);
+		Query query = getSession().getNamedQuery("getInscritoById").setLong("id", id);
 		Inscrito inscrito = (Inscrito) query.uniqueResult();
 		return inscrito;
 		
